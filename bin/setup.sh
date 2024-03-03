@@ -3,13 +3,13 @@ echo "**************************************************"
 echo " Setting up TDD/BDD Final Project Environment"
 echo "**************************************************"
 
-echo "*** Installing Python 3.9 and Virtual Environment"
+echo "*** Installing Python 3.11 and Virtual Environment"
 sudo apt-get update
-sudo DEBIAN_FRONTEND=noninteractive apt-get install -y python3.9 python3.9-venv
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -y python3.11 python3.11-venv
 
-echo "*** Making Python 3.9 the default..."
+echo "*** Making Python 3.11 the default..."
 sudo update-alternatives --remove-all python3
-sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.9 1
+sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.11 1
 
 echo "*** Checking the Python version..."
 python3 --version
@@ -29,7 +29,6 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get install -y sqlite3 ca-certificates c
 
 echo "*** Installing Python depenencies..."
 source ~/venv/bin/activate && python3 -m pip install --upgrade pip wheel
-source ~/venv/bin/activate && pip install -r requirements.txt
 
 echo "*** Establishing .env file"
 cp dot-env-example .env
